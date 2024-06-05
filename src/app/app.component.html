@@ -1,2 +1,13 @@
-<h1>Angular 17 tutorial</h1>
-<app-employee></app-employee>
+<div class="container">
+    <h1>Parent Component</h1>
+    <h3>Input Property Example</h3>
+    <p>
+      Parent Component: <input type="text" placeholder="text here.." #Pcomponent />
+       <button class="btn btn-sm btn-success" (click)="(0)">submit</button>
+    </p>
+    <h3>Output Property Example</h3>
+    <p>Value of Child Data: {{cData}}</p>
+    <app-employee [pData]="Pcomponent.value" (childEvent)="getData($event)"></app-employee>
+    <app-directives></app-directives>
+   
+</div>

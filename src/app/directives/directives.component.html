@@ -1,0 +1,46 @@
+<h1>NgIf</h1>
+
+<!-- <div *ngIf="isLoggedIn">User is Logged In</div>
+<div [@ngIf]="isLoggedIn">User is Logged In</div> -->
+<button class="btn btn-success" (click)="logIn()">Login</button>
+<button class="btn btn-danger" (click)="logOut()">Logout</button>
+@if (isLoggedIn) {
+<div>User is Logged In</div>
+}@else {
+<div>User Logged Out</div>
+}
+
+<input type="radio" name="rad" checked (click)="onChange(true)" />Male
+<input type="radio" name="rad" (click)="onChange(false)" />Female 
+@if (gender) {
+<div>I am Male</div>
+} 
+@if (!gender) {
+<div>I am Female</div>
+}
+
+@if(num1>num2){
+    <div>num1 Greater than num2</div>
+}@else if(num1<num2){
+    <div>num1 Less than num2</div>
+}@else{
+    <div>num1 equal to num2</div>
+}
+
+<h1>Switch Case</h1>
+<div>Enter Your Name: <input #textName (keyup)="0"></div>
+@switch (textName.value) {
+    @case ('ravan') {
+        <div>hello ravan</div>
+        break;
+    }
+    @case ('pooja') {
+        <div>hello pooja</div>
+    }
+    @case ('sita') {
+        <div>hello sita</div>
+    }
+    @default {
+        no data match
+    }
+}
